@@ -6,7 +6,7 @@ Widget customTextField({String? hint,
   FocusNode? focusNode,
   Widget? suffixIcon, bool readOnly =false,
   TextInputType? textInputType, ValueChanged<String>? onChanged}) {
-  return Expanded(child: TextField(
+  return TextField(
       controller: controller,
       focusNode: focusNode,
       readOnly: readOnly,
@@ -35,13 +35,13 @@ Widget customTextField({String? hint,
       // onChanged: controller.onMeterNumberChanged,
       keyboardType: textInputType,
       textInputAction: TextInputAction.next,
-      onEditingComplete: () => {}),);
+      onEditingComplete: () => {});
 }
 
 Widget customRow(ValueChanged<String>? onChange) {
 
-  return IntrinsicWidth(
-    child: Row(
+  return
+    Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Expanded(
@@ -53,10 +53,9 @@ Widget customRow(ValueChanged<String>? onChange) {
           flex: 2,
           child: customTextField(
             hint: "Phone Number",
-            onChanged: onChange,
-          ),
-        ),
-      ],
-    ),
+
+        ),)
+      ]
+
   );
 }

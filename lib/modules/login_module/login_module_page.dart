@@ -22,19 +22,23 @@ class LoginModulePage extends GetView<LoginController> {
               onTap: () => Get.back(),
             ),
             sizedH,
-            const Text("Enter Phone Number"),
+            const Text(
+              "Enter Phone Number",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             sizedH,
             SizedBox(
               width: Get.width,
-              child: const Text("Login with your registered phone number"),
+              child: const Text("Login with your registered phone number."),
             ),
             sizedH,
             sizedH,
-            customRow((value)=>controller.onPasswordChanged(value)),
+            customRow((value) => controller.onPasswordChanged(value)),
             sizedH,
             customTextField(
-                hint: "Enter Password", textInputType: TextInputType.text,
-            onChanged: (text)=>controller.onPasswordChanged(text)),
+                hint: "Enter Password",
+                textInputType: TextInputType.text,
+                onChanged: (text) => controller.onPasswordChanged(text)),
             sizedH,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,10 +50,17 @@ class LoginModulePage extends GetView<LoginController> {
                       //go to map
                       Get.toNamed(Routes.MAPPAGE)
                     },
-                    style: TextButton.styleFrom(backgroundColor: Colors.blue),
-                    child: const Text(
-                      "Login",
-                      style: TextStyle(color: Colors.white),
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "Login",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
@@ -57,7 +68,10 @@ class LoginModulePage extends GetView<LoginController> {
             ),
             sizedH,
             const Center(
-              child: Text("Forgot your password"),
+              child: Text(
+                "Forgot your password?",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             sizedH,
             const Center(
