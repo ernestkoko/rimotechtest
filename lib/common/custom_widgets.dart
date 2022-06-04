@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 Widget customTextField({String? hint,
   TextEditingController? controller,
   FocusNode? focusNode,
+  String? errorText,
   Widget? suffixIcon, bool readOnly =false,
   TextInputType? textInputType, ValueChanged<String>? onChanged, Widget? label}) {
   return TextField(
@@ -12,8 +13,10 @@ Widget customTextField({String? hint,
       readOnly: readOnly,
 
 
+
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
+        errorText:errorText ,
 
         hintText: hint,
         label: label,

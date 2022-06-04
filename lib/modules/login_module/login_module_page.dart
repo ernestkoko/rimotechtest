@@ -18,13 +18,12 @@ class LoginModulePage extends GetView<LoginController> {
           children: [
             GestureDetector(
                 onTap: () => Get.back(),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                 Icon(Icons.cancel_outlined),
-
-              ],)
-            ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Icon(Icons.cancel_outlined),
+                  ],
+                )),
             sizedH,
             const Text(
               "Enter Phone Number",
@@ -77,10 +76,13 @@ class LoginModulePage extends GetView<LoginController> {
             ),
             sizedH,
             sizedH,
-            const Center(
-              child: Text(
-                "Forgot your password?",
-                style: TextStyle(fontWeight: FontWeight.bold),
+            Center(
+              child: GestureDetector(
+                onTap: () async => await Get.toNamed(Routes.RESETPASSWORD),
+                child: const Text(
+                  "Forgot your password?",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ),
             sizedH,
