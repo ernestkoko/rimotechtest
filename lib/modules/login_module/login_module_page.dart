@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rimotechtest/common/app_strings.dart';
 import '../../common/custom_widgets.dart';
 import 'login_module_controller.dart';
 import '../../route/app_route.dart';
@@ -13,9 +14,8 @@ class LoginModulePage extends GetView<LoginController> {
       body: SafeArea(
           child: Container(
         margin: EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+
           children: [
             GestureDetector(
               child: Icon(Icons.cancel_outlined),
@@ -67,6 +67,8 @@ class LoginModulePage extends GetView<LoginController> {
               ],
             ),
             sizedH,
+            sizedH,
+
             const Center(
               child: Text(
                 "Forgot your password?",
@@ -74,8 +76,10 @@ class LoginModulePage extends GetView<LoginController> {
               ),
             ),
             sizedH,
-            const Center(
-              child: Icon(Icons.fingerprint_outlined),
+            sizedH,
+            sizedH,
+            Center(
+              child: Image.asset(AppStrings.thumbPrintAsset),
             )
           ],
         ),

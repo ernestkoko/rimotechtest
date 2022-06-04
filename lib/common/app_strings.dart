@@ -3,6 +3,7 @@
   ///Assets
   static const logo ='assets/img/rimot.png';
   static const congratsAsset ='assets/img/congrats.png';
+  static const thumbPrintAsset ='assets/img/thumbprint.png';
 
 
   ///Widgets

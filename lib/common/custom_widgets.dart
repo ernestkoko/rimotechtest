@@ -5,7 +5,7 @@ Widget customTextField({String? hint,
   TextEditingController? controller,
   FocusNode? focusNode,
   Widget? suffixIcon, bool readOnly =false,
-  TextInputType? textInputType, ValueChanged<String>? onChanged}) {
+  TextInputType? textInputType, ValueChanged<String>? onChanged, Widget? label}) {
   return TextField(
       controller: controller,
       focusNode: focusNode,
@@ -16,6 +16,8 @@ Widget customTextField({String? hint,
         suffixIcon: suffixIcon,
 
         hintText: hint,
+        label: label,
+
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.blue, width: 2),
           borderRadius: BorderRadius.all(
