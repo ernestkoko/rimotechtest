@@ -13,23 +13,30 @@ class LoginModulePage extends GetView<LoginController> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         child: ListView(
-
           children: [
             GestureDetector(
-              child: Icon(Icons.cancel_outlined),
-              onTap: () => Get.back(),
+                onTap: () => Get.back(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: const [
+                 Icon(Icons.cancel_outlined),
+
+              ],)
             ),
             sizedH,
             const Text(
               "Enter Phone Number",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             sizedH,
             SizedBox(
               width: Get.width,
-              child: const Text("Login with your registered phone number."),
+              child: const Text(
+                "Login with your registered phone number.",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+              ),
             ),
             sizedH,
             sizedH,
@@ -59,7 +66,9 @@ class LoginModulePage extends GetView<LoginController> {
                       child: const Text(
                         "Login",
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
                       ),
                     ),
                   ),
@@ -68,7 +77,6 @@ class LoginModulePage extends GetView<LoginController> {
             ),
             sizedH,
             sizedH,
-
             const Center(
               child: Text(
                 "Forgot your password?",
