@@ -18,17 +18,10 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
               () => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                      onTap: controller.onCancelClick,
-                      child: Row(
-                        children: [
-                          const Icon(Icons.cancel),
-                          Container(
-                            margin: const EdgeInsets.only(left: 20),
-                            child: const Text("Register"),
-                          )
-                        ],
-                      )),
+                  customCancelButton(
+                    onTap:controller.onCancelClick,
+                    title: "Register"
+                  ),
                   sizedBox,
                   Text(controller.formTitle.value),
                   sizedBox,

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget customTextField({String? hint,
   TextEditingController? controller,
@@ -63,4 +64,21 @@ Widget customRow(ValueChanged<String>? onChange) {
       ]
 
   );
+
+
+}
+
+Widget customCancelButton({GestureTapCallback? onTap, String? title}){
+  return  GestureDetector(
+      onTap:onTap ?? () => Get.back(),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children:  [
+          const Icon(Icons.cancel_outlined),
+         if(title !=null) Container(
+            margin: const EdgeInsets.only(left: 20),
+            child:  Text(title),
+          )
+        ],
+      ));
 }

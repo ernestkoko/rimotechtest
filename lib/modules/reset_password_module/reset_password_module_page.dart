@@ -13,14 +13,7 @@ class ResetPasswordModulePage extends GetView<ResetPasswordModuleController> {
         child: Container(
           margin: const EdgeInsets.all(20),
           child: ListView(children: [
-            GestureDetector(
-                onTap: () => Get.back(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Icon(Icons.cancel_outlined),
-                  ],
-                )),
+            customCancelButton(),
             sizedH,
             const Text(
               "Reset Password",

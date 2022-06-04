@@ -16,14 +16,7 @@ class LoginModulePage extends GetView<LoginController> {
         margin: const EdgeInsets.all(15),
         child: ListView(
           children: [
-            GestureDetector(
-                onTap: () => Get.back(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Icon(Icons.cancel_outlined),
-                  ],
-                )),
+            customCancelButton(),
             sizedH,
             const Text(
               "Enter Phone Number",
@@ -52,9 +45,9 @@ class LoginModulePage extends GetView<LoginController> {
               children: [
                 Expanded(
                   child: TextButton(
-                    onPressed: () => {
+                    onPressed: () async=>  {
                       //go to map
-                      Get.toNamed(Routes.MAPPAGE)
+                      await Get.toNamed(Routes.MAPPAGE)
                     },
                     style: TextButton.styleFrom(
                         backgroundColor: Colors.blue,
