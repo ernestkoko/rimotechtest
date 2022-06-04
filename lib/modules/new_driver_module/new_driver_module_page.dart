@@ -95,7 +95,7 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
             onChanged: (text) => controller.onEmailChanged(text)),
       ),
       sizedBox,
-      _customRow((value) => controller.onPhoneChanged(value)),
+      customRow((value) => controller.onPhoneChanged(value)),
       sizedBox,
       customTextField(
           hint: "Date of Birth",
@@ -138,7 +138,7 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
                 onChanged: (text) =>
                     controller.onNextOfKinRelationshipChanged(text))),
         sizedBox,
-       _customRow((value)=>controller.onNextOfKinPhoneChanged(value)),
+       customRow((value)=>controller.onNextOfKinPhoneChanged(value)),
         sizedBox,
         customTextField(
             hint: "Email Address",
@@ -198,25 +198,5 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
     );
   }
 
-  Widget _customRow(ValueChanged<String>? onChange) {
-    return IntrinsicWidth(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            flex: 1,
-            child: customTextField(hint: "NG (+234)", readOnly: true),
-          ),
-          horizontalBox,
-          Expanded(
-            flex: 2,
-            child: customTextField(
-              hint: "Phone Number",
-              onChanged: onChange,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+
 }

@@ -6,12 +6,6 @@ import '../../route/app_route.dart';
 
 class LoginModulePage extends GetView<LoginController> {
   final sizedH = const SizedBox(height: 20);
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _phoneController = TextEditingController();
-
-  ///Focus Nodes
-  final FocusNode _passwordNode = FocusNode();
-  final FocusNode _phoneNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -30,33 +24,13 @@ class LoginModulePage extends GetView<LoginController> {
             sizedH,
             const Text("Enter Phone Number"),
             sizedH,
-            Container(
+            SizedBox(
               width: Get.width,
               child: const Text("Login with your registered phone number"),
             ),
             sizedH,
             sizedH,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                    child: Container(
-                  width: Get.width * 0.1,
-                  child: customTextField(hint: "NG (+234)", readOnly: true),
-                )),
-                const SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  child: Container(
-                    width: Get.width * 0.7,
-                    child: customTextField(
-                        hint: "Phone Number",
-                        textInputType: TextInputType.phone),
-                  ),
-                ),
-              ],
-            ),
+            customRow((value)=>controller.onPasswordChanged(value)),
             sizedH,
             customTextField(
                 hint: "Enter Password", textInputType: TextInputType.text,

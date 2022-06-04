@@ -6,8 +6,8 @@ class LoginController extends GetxController {
 
   LoginController(this._provider);
 
-  var userName = ''.obs;
-  var password = ''.obs;
+  final userName = ''.obs;
+  final password = ''.obs;
 
   @override
   onInit() {
@@ -15,6 +15,10 @@ class LoginController extends GetxController {
     userName.value = '';
     password.value = '';
   }
+
+  onUserNameChanged(String text) => userName.value = text;
+
+  onPasswordChanged(String text) => password.value = text;
 
   submit() async {
     try {
@@ -24,7 +28,5 @@ class LoginController extends GetxController {
     }
   }
 
-  onPasswordChanged(String text) => password.value = text;
 
-  onUserNameChanged(String text) => userName.value = text;
 }
