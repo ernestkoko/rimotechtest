@@ -5,8 +5,10 @@ import '../../common/custom_widgets.dart';
 import 'new_driver_controller.dart';
 
 class NewDriverModulePage extends GetView<NewDriverModuleController> {
-  final sizedBox = const SizedBox(height: 20);
-  final horizontalBox = const SizedBox(width: 10);
+ static const  sizedBox =  SizedBox(height: 20);
+  static const  horizontalBox = SizedBox(width: 10);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +17,12 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
         child: Container(
             margin: const EdgeInsets.only(left: 10, right: 10, top: 20),
             child: Obx(
-              () => Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              () => ListView(
+
                 children: [
                   customCancelButton(
                     onTap:controller.onCancelClick,
-                    title: "Register"
+                    title: "Register",
                   ),
                   sizedBox,
                   Text(controller.formTitle.value),
@@ -175,7 +177,7 @@ class NewDriverModulePage extends GetView<NewDriverModuleController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
         GestureDetector(
